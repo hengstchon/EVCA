@@ -25,7 +25,7 @@ def EVCA(args: argparse.Namespace, input_list, device) -> None:
 
     steps = args.gopsize
     for file in input_list:
-        number_of_frames = Path(file).stat().st_size // (width * height * pix_size)
+        number_of_frames = int(Path(file).stat().st_size // (width * height * pix_size))
         nframes = args.frames if args.frames != 0 else number_of_frames
         steps = steps if steps <= nframes else nframes
         args.input = file
