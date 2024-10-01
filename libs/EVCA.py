@@ -88,7 +88,7 @@ def EVCA(args: argparse.Namespace, input_list, device) -> None:
         if args.method == 'VCA':
             df = pd.DataFrame({'B': out_frames[0], 'E': out_frames[1], 'h': out_frames[2], 'h2': out_frames[3]})
         elif args.method == 'EVCA':
-            df = pd.DataFrame({'B': out_frames[0], 'SC': out_frames[1], 'TC': out_frames[2], 'TC2': out_frames[3]})
+            df = pd.DataFrame({'B': out_frames[0], 'SC': out_frames[1]})
         directory, file_name = os.path.split(args.csv)
         directory = './' if directory == '' else directory
 
